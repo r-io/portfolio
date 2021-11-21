@@ -12,7 +12,7 @@ const randomPoint = (num) => {
   return Math.random() * (max - min + 1) + min;
 };
 
-function Star({ curve, color, speed }) {
+function Star({ curve, speed }) {
   const star = useRef();
   const [active, setActive] = useState(false);
   useFrame(() => {
@@ -45,7 +45,7 @@ function Star({ curve, color, speed }) {
         transparent
         depthTest={false}
         lineWidth={0.1}
-        color={color}
+        color={[1, 1, 0.7]}
         dashArray={0.2}
         dashRatio={0.99}
       />
@@ -75,7 +75,6 @@ export default function Stars({ count }) {
             .clone();
         });
         return {
-          color: [1, 1, Math.random() / 2 + 0.5],
           speed: Math.max(0.001, 0.004 * Math.random()) / 2,
           curve: points,
         };

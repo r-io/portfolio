@@ -1,9 +1,11 @@
-.App {
+.app {
   display: flex;
+  flex-direction: column;
 }
 
-.header {
+.top-content {
   display: flex;
+  flex-direction: column;
   flex: 1;
   min-height: 100vh;
 }
@@ -13,59 +15,47 @@
   display: flex;
   flex: 1;
   height: 100vh !important;
-  width: 100vw !important;
+  width: 100% !important;
   background-color: #1b1b1b;
 }
 
 .content-container {
   display: flex;
   margin: auto;
-  z-index: 1;
   flex-direction: column;
   text-align: center;
   align-items: center;
 }
 
+.content-container div {
+  z-index: 1;
+}
+
 .content-container h1 {
   color: white;
   margin-bottom: 0px;
+  z-index: 1;
+  font-size: xx-large;
 }
 
 .content-container h3 {
+  display: flex;
   color: white;
+  z-index: 1;
+  margin-bottom: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content-container p {
+  color: white;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.article {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* .about-me-section {
+  
+} */
