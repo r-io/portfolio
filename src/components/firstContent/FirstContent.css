@@ -1,0 +1,37 @@
+.first-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+}
+
+.canvas {
+  position: absolute !important;
+  display: flex;
+  flex: 1;
+  height: 100vh !important;
+  width: 100% !important;
+  background-color: #1b1b1b;
+}
+
+.content-container {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.first-content .MuiTypography-root {
+  z-index: 1;
+  color: white;
+}
+
+.first-content .MuiTypography-h5 {
+  display: flex;
+}
+
+.first-content .MuiContainer-root {
+  z-index: 1;
+  margin: 1em 0em;
+}

@@ -5,6 +5,7 @@ import {
   Button,
   IconButton,
   Toolbar,
+  Tooltip,
   Typography,
   useScrollTrigger,
 } from '@mui/material';
@@ -36,12 +37,16 @@ export default function HeaderBar() {
             <Button color="inherit">About Me</Button>
             <Button color="inherit">History</Button>
             <Button color="inherit">Projects</Button>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Mail />
-            </IconButton>
-            <IconButton size="large" aria-label="show 17 new notifications" color="inherit">
-              <GitHub />
-            </IconButton>
+            <Tooltip title="email4rio@gmail.com">
+              <IconButton size="large" href="mailto:email4rio@gmail.com" color="inherit">
+                <Mail />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="r-io">
+              <IconButton size="large" href="https://github.com/r-io" color="inherit">
+                <GitHub />
+              </IconButton>
+            </Tooltip>
           </Box>
         </Toolbar>
       </AppBar>

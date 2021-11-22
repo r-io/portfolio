@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 import TextTransition, { presets } from 'react-text-transition';
 
@@ -12,10 +13,10 @@ export default function TextAnimation() {
   }, []);
 
   return (
-    <h3>
+    <Typography variant="h5">
       I'm a&nbsp;
       <TextTransition text={TEXTS[index % TEXTS.length]} springConfig={presets.wobbly} />
       &nbsp;Developer
-    </h3>
+    </Typography>
   );
 }
