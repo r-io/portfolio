@@ -3,7 +3,7 @@
   flex-direction: column;
   flex: 1;
   align-items: center;
-  background-color: lightgrey;
+  background-color: whitesmoke;
 }
 
 .second-content section {
@@ -15,6 +15,10 @@
   margin-bottom: 1em;
 }
 
+.second-content .MuiTypography-root .MuiSvgIcon-root {
+  vertical-align: text-top;
+}
+
 .second-content .MuiContainer-root {
   display: flex;
   flex-wrap: wrap;
@@ -23,6 +27,10 @@
 
 .second-content .MuiCard-root {
   margin-bottom: 1.5em;
+}
+
+.second-content .MuiButtonBase-root {
+  margin-left: 0px !important;
 }
 
 .second-content img {

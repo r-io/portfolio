@@ -1,5 +1,6 @@
 import './FirstContent.css';
 
+import { KeyboardArrowDown } from '@mui/icons-material';
 import { Button, Container, Typography } from '@mui/material';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -17,8 +18,16 @@ function MouseMove() {
 }
 
 export default function FirstContent() {
+  const handleScroll = () => {
+    document.getElementById('portfolio').scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+      inline: 'start',
+    });
+  };
+
   return (
-    <article className="first-content">
+    <article id="top" className="first-content">
       <Canvas
         className="canvas"
         dpr={[1, 2]}
@@ -27,7 +36,7 @@ export default function FirstContent() {
         onWheel={() => console.log('click')}
       >
         <MouseMove />
-        <Stars count={80} />
+        <Stars count={50} />
         <Lights />
       </Canvas>
       <HeaderBar />
@@ -42,8 +51,9 @@ export default function FirstContent() {
             are my daily routine.
           </Typography>
         </Container>
-        <Button variant="contained" color="secondary">
-          Get started
+        <Button onClick={handleScroll} variant="contained" color="secondary">
+          <KeyboardArrowDown />
+          Explore
         </Button>
       </div>
     </article>

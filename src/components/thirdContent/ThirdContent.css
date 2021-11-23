@@ -1,0 +1,36 @@
+.third-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  background-color: #173a5e;
+}
+
+.third-content .MuiTypography-root {
+  color: white;
+}
+
+.third-content .MuiTypography-root .MuiSvgIcon-root {
+  vertical-align: text-top;
+}
+
+.third-content .MuiContainer-root {
+  display: flex;
+  flex-direction: column;
+}
+
+.third-content .MuiInputBase-root {
+  margin-top: 1em;
+}
+
+.third-content .error-message {
+  color: #d32f2f;
+}
+
+.third-content .MuiButton-root {
+  align-self: flex-end;
+}
+
+.third-content footer {
+  margin: 2em 0em;
+}

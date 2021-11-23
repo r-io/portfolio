@@ -16,17 +16,31 @@ function ElevationScroll(props) {
 }
 
 export default function HeaderBar() {
+  const handleScroll = (id) => {
+    document.getElementById(id).scrollIntoView({
+      block: 'start',
+      behavior: 'smooth',
+      inline: 'start',
+    });
+  };
+
   return (
     <ElevationScroll>
       <AppBar>
         <Toolbar variant="dense">
-          <IconButton size="large" href="#" color="inherit">
+          <IconButton size="large" onClick={() => handleScroll('top')} color="inherit">
             <img className="header-logo" src="/logo.png" />
           </IconButton>
+          <Box sx={{ display: { md: 'flex' } }}>
+            <Button onClick={() => handleScroll('portfolio')} color="inherit">
+              Portfolio
+            </Button>
+            <Button onClick={() => handleScroll('contact')} color="inherit">
+              Contact
+            </Button>
+          </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { md: 'flex' } }}>
-            <Button color="inherit">About Me</Button>
-            <Button color="inherit">Portfolio</Button>
             <Tooltip title="email4rio@gmail.com">
               <IconButton size="large" href="mailto:email4rio@gmail.com" color="inherit">
                 <Mail />
