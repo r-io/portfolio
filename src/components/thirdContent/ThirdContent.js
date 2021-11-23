@@ -15,6 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import emailjs from 'emailjs-com';
 import { Formik } from 'formik';
 import React from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const theme = createTheme({
   palette: {
@@ -36,6 +37,49 @@ export default function ThirdContent() {
     setOpen(false);
   };
 
+  const formValidation = (values) => {
+    const errors = {};
+
+    if (!values.name) {
+      errors.name = 'Required';
+    }
+
+    if (!values.email) {
+      errors.email = 'Required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
+      errors.email = 'Invalid email address';
+    }
+
+    if (!values.message) {
+      errors.message = 'Required';
+    }
+
+    return errors;
+  };
+
+  const formSubmit = (values, { setSubmitting }) => {
+    emailjs
+      .send('service_p6vs91l', 'template_mbur9dv', values, 'user_UnLjDRc7DRf0KnPCV6iwb')
+      .then(
+        (result) => {
+          if (result.status === 200) {
+            setMessage('Email Sent');
+            setOpen(true);
+          } else {
+            setMessage(result.text);
+            setOpen(true);
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+      .catch((err) => {
+        console.error(err);
+      });
+    setSubmitting(false);
+  };
+
   const actionSnackbar = (
     <React.Fragment>
       <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
@@ -47,53 +91,16 @@ export default function ThirdContent() {
   return (
     <ThemeProvider theme={theme}>
       <article id="contact" className="third-content">
-        <Typography variant="h4">
-          <Phone fontSize="large" />
-          Contact
-        </Typography>
+        <ScrollAnimation animateIn="flipInY">
+          <Typography variant="h4">
+            <Phone fontSize="large" />
+            Contact
+          </Typography>
+        </ScrollAnimation>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
-          validate={(values) => {
-            const errors = {};
-
-            if (!values.name) {
-              errors.name = 'Required';
-            }
-
-            if (!values.email) {
-              errors.email = 'Required';
-            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-              errors.email = 'Invalid email address';
-            }
-
-            if (!values.message) {
-              errors.message = 'Required';
-            }
-
-            return errors;
-          }}
-          onSubmit={(values, { setSubmitting }) => {
-            emailjs
-              .send('service_p6vs91l', 'template_mbur9dv', values, 'user_UnLjDRc7DRf0KnPCV6iwb')
-              .then(
-                (result) => {
-                  if (result.status === 200) {
-                    setMessage('Email Sent');
-                    setOpen(true);
-                  } else {
-                    setMessage(result.text);
-                    setOpen(true);
-                  }
-                },
-                (error) => {
-                  console.log(error);
-                }
-              )
-              .catch((err) => {
-                console.error(err);
-              });
-            setSubmitting(false);
-          }}
+          validate={formValidation}
+          onSubmit={formSubmit}
         >
           {({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
             <Container component="form" autoComplete="off" maxWidth="sm" onSubmit={handleSubmit}>
