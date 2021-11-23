@@ -43,7 +43,12 @@ export default function HeaderBar() {
               </IconButton>
             </Tooltip>
             <Tooltip title="r-io">
-              <IconButton size="large" href="https://github.com/r-io" color="inherit">
+              <IconButton
+                size="large"
+                target="_blank"
+                href="https://github.com/r-io"
+                color="inherit"
+              >
                 <GitHub />
               </IconButton>
             </Tooltip>

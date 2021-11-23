@@ -24,3 +24,11 @@
 .second-content .MuiCard-root {
   margin-bottom: 1.5em;
 }
+
+.second-content img {
+  background-size: contain;
+}
+
+.second-content .MuiCardMedia-img {
+  cursor: pointer;
+}

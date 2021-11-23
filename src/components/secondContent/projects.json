@@ -1,0 +1,11 @@
+[
+  {
+    "id": "jkf",
+    "title": "Japanese Kanji Focus",
+    "description": "Android based application to learn Japanese Kanji, completed with writing challenges to make it more fun",
+    "count": 9,
+    "github": "https://github.com/r-io/japanese-kanji-focus",
+    "apk": true,
+    "status": "In Progress" 
+  }
+]
