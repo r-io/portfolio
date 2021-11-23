@@ -32,6 +32,7 @@ export default function FirstContent() {
       </Canvas>
       <HeaderBar />
       <div className="content-container">
+        <img className="image-logo" src="/logo.png" />
         <Typography variant="h2">Rio</Typography>
         <TextAnimation />
         <Container maxWidth="sm">

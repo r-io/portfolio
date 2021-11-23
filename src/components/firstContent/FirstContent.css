@@ -22,6 +22,12 @@
   align-items: center;
 }
 
+.first-content .image-logo {
+  max-width: 100px;
+  max-height: 100px;
+  z-index: 1;
+}
+
 .first-content .MuiTypography-root {
   z-index: 1;
   color: white;
@@ -34,4 +40,9 @@
 .first-content .MuiContainer-root {
   z-index: 1;
   margin: 1em 0em;
+}
+
+.header-logo {
+  width: 30px;
+  height: 30px;
 }

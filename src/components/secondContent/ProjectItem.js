@@ -24,7 +24,7 @@ function SimpleDialog(props) {
   return (
     <Dialog onClose={handleClose} open={open} maxWidth="lg">
       <DialogContent>
-        <ImageList sx={{ width: 1000, height: 572 }} cols={3}>
+        <ImageList sx={{ width: 1000, height: 400 }} cols={3} rowHeight={572}>
           {new Array(count).fill().map((_, index) => (
             <ImageListItem key={index}>
               <img

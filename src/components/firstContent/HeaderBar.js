@@ -1,14 +1,5 @@
 import { GitHub, Mail } from '@mui/icons-material';
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Tooltip,
-  Typography,
-  useScrollTrigger,
-} from '@mui/material';
+import { AppBar, Box, Button, IconButton, Toolbar, Tooltip, useScrollTrigger } from '@mui/material';
 import React from 'react';
 
 function ElevationScroll(props) {
@@ -29,14 +20,13 @@ export default function HeaderBar() {
     <ElevationScroll>
       <AppBar>
         <Toolbar variant="dense">
-          <Typography variant="h6" color="inherit" component="div">
-            Rio
-          </Typography>
+          <IconButton size="large" href="#" color="inherit">
+            <img className="header-logo" src="/logo.png" />
+          </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { md: 'flex' } }}>
             <Button color="inherit">About Me</Button>
-            <Button color="inherit">History</Button>
-            <Button color="inherit">Projects</Button>
+            <Button color="inherit">Portfolio</Button>
             <Tooltip title="email4rio@gmail.com">
               <IconButton size="large" href="mailto:email4rio@gmail.com" color="inherit">
                 <Mail />
