@@ -2,10 +2,51 @@
   {
     "id": "jkf",
     "title": "Japanese Kanji Focus",
-    "description": "Android based application to learn Japanese Kanji, completed with writing challenges to make it more fun",
+    "description": "Android/React Native based application to learn Japanese Kanji, completed with writing challenges to make it more fun",
     "count": 9,
     "github": "https://github.com/r-io/japanese-kanji-focus",
-    "apk": true,
-    "status": "In Progress" 
+    "apk": true
+  },
+  {
+    "id": "beam-tv",
+    "title": "Beamafilm (TV App)",
+    "description": "React Native based application for subscribers or library patrons to watch movies, documentaries, and tv series.",
+    "count": 4,
+    "complete": true,
+    "shop": "https://play.google.com/store/apps/details?id=com.beamafilm.tv",
+    "landscape": true
+  },
+  {
+    "id": "beam-m",
+    "title": "Beamafilm (App)",
+    "description": "React Native based application for subscribers or library patrons to watch movies, documentaries, and tv series.",
+    "count": 10,
+    "complete": true,
+    "shop": "https://play.google.com/store/apps/details?id=com.beamafilm"
+  },
+  {
+    "id": "beam",
+    "title": "Beamafilm (Web)",
+    "description": "React based web application for subscribers or library patrons to watch movies, documentaries, and tv series.",
+    "count": 6,
+    "complete": true,
+    "website": "https://beamafilm.com/",
+    "landscape": true
+  },
+  {
+    "id": "odeo-m",
+    "title": "Odeo (App)",
+    "description": "React Native based application of a financial technology to buy or sell phone credits, pay bills and store money.",
+    "count": 7,
+    "complete": true 
+  },
+  {
+    "id": "odeo",
+    "title": "Odeo (Web)",
+    "description": "React based web application of a financial technology to buy or sell phone credits, pay bills and store money.",
+    "count": 4,
+    "complete": true,
+    "website": "https://www.odeo.co.id/",
+    "landscape": true
   }
 ]

@@ -3,6 +3,7 @@ import './FirstContent.css';
 import { KeyboardArrowDown } from '@mui/icons-material';
 import { Button, Container, Typography } from '@mui/material';
 import { Canvas, useFrame } from '@react-three/fiber';
+import ScrollAnimation from 'react-animate-on-scroll';
 import * as THREE from 'three';
 
 import HeaderBar from './HeaderBar';
@@ -40,7 +41,7 @@ export default function FirstContent() {
         <Lights />
       </Canvas>
       <HeaderBar />
-      <div className="content-container">
+      <ScrollAnimation className="content-container" animateIn="fadeIn">
         <img className="image-logo" src="/logo.png" />
         <Typography variant="h2">Rio</Typography>
         <TextAnimation />
@@ -55,7 +56,7 @@ export default function FirstContent() {
           <KeyboardArrowDown />
           Explore
         </Button>
-      </div>
+      </ScrollAnimation>
     </article>
   );
 }

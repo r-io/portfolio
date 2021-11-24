@@ -97,6 +97,7 @@ export default function ThirdContent() {
             Contact
           </Typography>
         </ScrollAnimation>
+        <Typography variant="h6">Feel free to send a message to Rio:</Typography>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
           validate={formValidation}

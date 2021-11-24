@@ -22,11 +22,11 @@
 .second-content .MuiContainer-root {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .second-content .MuiCard-root {
-  margin-bottom: 1.5em;
+  margin: 1em;
 }
 
 .second-content .MuiButtonBase-root {
@@ -39,6 +39,10 @@
 
 .second-content .MuiCardMedia-img {
   cursor: pointer;
+}
+
+.second-content .success-text {
+  color: #2e7d32;
 }
 
 .MuiModal-root .MuiDialogContent-root {
@@ -68,8 +72,26 @@
   bottom: 0px !important;
 }
 
-.screenshot-image {
-  width: 300px !important;
-  height: 500px;
+.landscape-screenshot-image {
+  width: 980px !important;
   background-size: contain;
+}
+
+.screenshot-image {
+  width: 320px !important;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1100px) {
+  .landscape-screenshot-image {
+    width: 640px !important;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .landscape-screenshot-image {
+    width: 320px !important;
+    background-size: contain;
+  }
 }

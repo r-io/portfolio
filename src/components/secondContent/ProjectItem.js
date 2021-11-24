@@ -1,4 +1,4 @@
-import { Download, GitHub, Photo } from '@mui/icons-material';
+import { Download, GitHub, Language, Photo, Shop } from '@mui/icons-material';
 import {
   Card,
   CardActions,
@@ -6,6 +6,7 @@ import {
   CardMedia,
   Dialog,
   DialogContent,
+  Divider,
   IconButton,
   Tooltip,
   Typography,
@@ -14,7 +15,7 @@ import React from 'react';
 import Slider from 'react-slick';
 
 function SimpleDialog(props) {
-  const { onClose, open, id, count, title } = props;
+  const { onClose, open, id, count, title, landscape } = props;
 
   const handleClose = () => {
     onClose();
@@ -24,28 +25,30 @@ function SimpleDialog(props) {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: landscape ? 1 : 3,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          dots: true,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 720,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-          infinite: true,
-        },
-      },
-    ],
+    responsive: landscape
+      ? undefined
+      : [
+          {
+            breakpoint: 1080,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              dots: true,
+              infinite: true,
+            },
+          },
+          {
+            breakpoint: 760,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: true,
+              infinite: true,
+            },
+          },
+        ],
   };
 
   return (
@@ -54,7 +57,7 @@ function SimpleDialog(props) {
         <Slider {...settings}>
           {new Array(count).fill().map((_, index) => (
             <img
-              className="screenshot-image"
+              className={landscape ? 'landscape-screenshot-image' : 'screenshot-image'}
               key={index}
               src={'/projects/' + id + '-' + (index + 1) + '.jpg'}
               alt={title}
@@ -68,7 +71,7 @@ function SimpleDialog(props) {
 }
 
 export default function ProjectItem(props) {
-  const { id, title, status, description, github, apk } = props;
+  const { id, title, complete, description, website, github, shop, apk } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -88,6 +91,7 @@ export default function ProjectItem(props) {
         alt={title}
         onClick={handleClickOpen}
       />
+      <Divider />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
@@ -95,9 +99,21 @@ export default function ProjectItem(props) {
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
-        <Typography color="error" variant="h6" component="p" textAlign="right">
-          {status}
-        </Typography>
+        {complete ? (
+          <Typography
+            className="success-text"
+            color="success"
+            variant="h6"
+            component="p"
+            textAlign="right"
+          >
+            Complete
+          </Typography>
+        ) : (
+          <Typography color="error" variant="h6" component="p" textAlign="right">
+            In Progress
+          </Typography>
+        )}
       </CardContent>
       <CardActions>
         <Tooltip title="View images">
@@ -105,10 +121,24 @@ export default function ProjectItem(props) {
             <Photo />
           </IconButton>
         </Tooltip>
+        {website && (
+          <Tooltip title="Visit Website">
+            <IconButton size="large" href={website} target="_blank" color="primary">
+              <Language />
+            </IconButton>
+          </Tooltip>
+        )}
         {github && (
           <Tooltip title="View github repository">
             <IconButton size="large" href={github} target="_blank" color="primary">
               <GitHub />
+            </IconButton>
+          </Tooltip>
+        )}
+        {shop && (
+          <Tooltip title="View on Google Play Store">
+            <IconButton size="large" href={shop} target="_blank" color="primary">
+              <Shop />
             </IconButton>
           </Tooltip>
         )}
