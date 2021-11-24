@@ -40,3 +40,36 @@
 .second-content .MuiCardMedia-img {
   cursor: pointer;
 }
+
+.MuiModal-root .MuiDialogContent-root {
+  overflow: hidden;
+}
+
+.slick-slide > div {
+  text-align: center;
+}
+
+.slick-arrow::before {
+  color: #173a5e !important;
+  font-size: 30px !important;
+}
+
+.slick-prev {
+  left: -20px !important;
+  z-index: 10 !important;
+}
+
+.slick-next {
+  right: -10px !important;
+}
+
+.slick-dots {
+  position: relative !important;
+  bottom: 0px !important;
+}
+
+.screenshot-image {
+  width: 300px !important;
+  height: 500px;
+  background-size: contain;
+}

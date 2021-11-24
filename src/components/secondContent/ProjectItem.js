@@ -7,12 +7,11 @@ import {
   Dialog,
   DialogContent,
   IconButton,
-  ImageList,
-  ImageListItem,
   Tooltip,
   Typography,
 } from '@mui/material';
 import React from 'react';
+import Slider from 'react-slick';
 
 function SimpleDialog(props) {
   const { onClose, open, id, count, title } = props;
@@ -21,20 +20,48 @@ function SimpleDialog(props) {
     onClose();
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          infinite: true,
+        },
+      },
+    ],
+  };
+
   return (
     <Dialog onClose={handleClose} open={open} maxWidth="lg">
       <DialogContent>
-        <ImageList sx={{ width: 1000, height: 400 }} cols={3} rowHeight={572}>
+        <Slider {...settings}>
           {new Array(count).fill().map((_, index) => (
-            <ImageListItem key={index}>
-              <img
-                src={'/projects/' + id + '-' + (index + 1) + '.jpg'}
-                alt={title}
-                loading="lazy"
-              />
-            </ImageListItem>
+            <img
+              className="screenshot-image"
+              key={index}
+              src={'/projects/' + id + '-' + (index + 1) + '.jpg'}
+              alt={title}
+              loading="lazy"
+            />
           ))}
-        </ImageList>
+        </Slider>
       </DialogContent>
     </Dialog>
   );
