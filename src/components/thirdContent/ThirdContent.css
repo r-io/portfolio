@@ -3,11 +3,16 @@
   flex-direction: column;
   flex: 1;
   align-items: center;
-  background-color: #173a5e;
+  background-color: whitesmoke;
 }
 
-.third-content .MuiTypography-root {
-  color: white;
+.third-content section {
+  margin: 3em 0em;
+}
+
+.third-content .MuiTypography-h4 {
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .third-content .MuiTypography-root .MuiSvgIcon-root {
@@ -16,21 +21,77 @@
 
 .third-content .MuiContainer-root {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.third-content .MuiInputBase-root {
-  margin-top: 1em;
+.third-content .MuiCard-root {
+  margin: 1em;
 }
 
-.third-content .error-message {
-  color: #d32f2f;
+.third-content .MuiButtonBase-root {
+  margin-left: 0px !important;
 }
 
-.third-content .MuiButton-root {
-  align-self: flex-end;
+.third-content img {
+  background-size: contain;
 }
 
-.third-content footer {
-  margin: 2em 0em;
+.third-content .MuiCardMedia-img {
+  cursor: pointer;
+}
+
+.third-content .success-text {
+  color: #2e7d32;
+}
+
+.MuiModal-root .MuiDialogContent-root {
+  overflow: hidden;
+}
+
+.slick-slide > div {
+  text-align: center;
+}
+
+.slick-arrow::before {
+  color: #173a5e !important;
+  font-size: 30px !important;
+}
+
+.slick-prev {
+  left: -20px !important;
+  z-index: 10 !important;
+}
+
+.slick-next {
+  right: -10px !important;
+}
+
+.slick-dots {
+  position: relative !important;
+  bottom: 0px !important;
+}
+
+.landscape-screenshot-image {
+  width: 980px !important;
+  background-size: contain;
+}
+
+.screenshot-image {
+  width: 320px !important;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1100px) {
+  .landscape-screenshot-image {
+    width: 640px !important;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .landscape-screenshot-image {
+    width: 320px !important;
+    background-size: contain;
+  }
 }

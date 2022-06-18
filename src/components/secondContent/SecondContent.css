@@ -25,73 +25,41 @@
   justify-content: center;
 }
 
-.second-content .MuiCard-root {
-  margin: 1em;
+.second-content .MuiContainer-root .MuiCard-root {
+  margin: 0.5em;
+  padding: 1.5em 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
 }
 
-.second-content .MuiButtonBase-root {
-  margin-left: 0px !important;
+.second-content .MuiContainer-root .MuiCard-root .MuiPaper-root {
+  background-color: #173a5e;
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5em;
 }
 
-.second-content img {
-  background-size: contain;
+.second-content .MuiContainer-root .MuiCard-root .MuiSvgIcon-root{
+  color: whitesmoke;
+  font-size: 50px;
 }
 
-.second-content .MuiCardMedia-img {
-  cursor: pointer;
+.second-content .chart-container {
+  margin-top: 1em;
+  min-height: 400px;
+  min-width: 400px;
+  max-width: 600px;
 }
 
-.second-content .success-text {
-  color: #2e7d32;
-}
-
-.MuiModal-root .MuiDialogContent-root {
-  overflow: hidden;
-}
-
-.slick-slide > div {
-  text-align: center;
-}
-
-.slick-arrow::before {
-  color: #173a5e !important;
-  font-size: 30px !important;
-}
-
-.slick-prev {
-  left: -20px !important;
-  z-index: 10 !important;
-}
-
-.slick-next {
-  right: -10px !important;
-}
-
-.slick-dots {
-  position: relative !important;
-  bottom: 0px !important;
-}
-
-.landscape-screenshot-image {
-  width: 980px !important;
-  background-size: contain;
-}
-
-.screenshot-image {
-  width: 320px !important;
-  background-size: contain;
-}
-
-@media screen and (max-width: 1100px) {
-  .landscape-screenshot-image {
-    width: 640px !important;
-    background-size: contain;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .landscape-screenshot-image {
-    width: 320px !important;
-    background-size: contain;
+@media screen and (max-width: 610px) {
+  .second-content .chart-container {
+    min-width: 300px;
+    max-width: 400px;
   }
 }

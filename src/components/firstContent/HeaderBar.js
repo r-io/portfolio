@@ -1,4 +1,4 @@
-import { FolderOpen, GitHub, Mail, MenuOutlined, Phone } from '@mui/icons-material';
+import { Equalizer, FolderOpen, GitHub, Mail, MenuOutlined, Phone } from '@mui/icons-material';
 import {
   AppBar,
   Box,
@@ -73,6 +73,10 @@ export default function HeaderBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      <MenuItem onClick={() => handleScroll('about')}>
+        <Equalizer />
+        <Typography variant="p">About</Typography>
+      </MenuItem>
       <MenuItem onClick={() => handleScroll('portfolio')}>
         <FolderOpen />
         <Typography variant="p">Portfolio</Typography>
@@ -101,6 +105,9 @@ export default function HeaderBar() {
             <img className="header-logo" src="/logo.png" />
           </IconButton>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Button onClick={() => handleScroll('about')} color="inherit">
+              About
+            </Button>
             <Button onClick={() => handleScroll('portfolio')} color="inherit">
               Portfolio
             </Button>

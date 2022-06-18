@@ -3,6 +3,7 @@ import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material';
 
 import FirstContent from './components/firstContent/FirstContent';
+import FourthContent from './components/fourthContent/FourthContent';
 import SecondContent from './components/secondContent/SecondContent';
 import ThirdContent from './components/thirdContent/ThirdContent';
 
@@ -40,8 +41,9 @@ export default function App() {
       <div className="app">
         <FirstContent />
         <SecondContent />
-        <Divider />
         <ThirdContent />
+        <Divider />
+        <FourthContent />
       </div>
     </ThemeProvider>
   );
