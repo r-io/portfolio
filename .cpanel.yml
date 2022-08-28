@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export BUILDPATH=~/repositories/portfolio
+    - export DEPLOYPATH=~/r-io.xyz/rio
+    - cd $DEPLOYPATH
+    - rm -rf build/
+    - cp $BUILDPATH/build $DEPLOYPATH/build
