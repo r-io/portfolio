@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export BUILDPATH=~/repositories/portfolio
-    - export DEPLOYPATH=~/r-io.xyz/rio
+    - export DEPLOYPATH=~/public_html
     - cd $DEPLOYPATH
     - rm -rf build/
-    - cp $BUILDPATH/build $DEPLOYPATH/build
+    - cp -R $BUILDPATH/build $DEPLOYPATH/build
