@@ -1,21 +1,10 @@
 import './SecondContent.css';
-import 'react-svg-radar-chart/build/css/index.css';
 
 import { Devices, Equalizer, Lightbulb, RocketLaunch, Speed } from '@mui/icons-material';
 import { Card, Container, Paper, Typography } from '@mui/material';
-import {
-  Chart as ChartJS,
-  Filler,
-  Legend,
-  LineElement,
-  PointElement,
-  RadialLinearScale,
-  Tooltip,
-} from 'chart.js';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { Radar } from 'react-chartjs-2';
 
-ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
+import BarItem from './BarItem';
 
 export default function SecondContent() {
   return (
@@ -27,7 +16,7 @@ export default function SecondContent() {
             About
           </Typography>
         </ScrollAnimation>
-        <Container>
+        <Container className="top-container">
           <Card>
             <Paper>
               <Speed fontSize="large" />
@@ -66,36 +55,15 @@ export default function SecondContent() {
           </Card>
         </Container>
         <ScrollAnimation animateIn="fadeIn">
-          <Container className="chart-container">
-            <Radar
-              options={{
-                // responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                  Radar: {
-                    beginAtZero: true,
-                    max: 100,
-                    pointLabels: {
-                      font: {
-                        size: 15,
-                      },
-                    },
-                  },
-                },
-              }}
-              data={{
-                labels: ['HTML', 'React', 'UI Design', 'CSS', 'Javascript', 'Node.js'],
-                datasets: [
-                  {
-                    label: 'Proficiency',
-                    data: [90, 80, 50, 90, 80, 70],
-                    backgroundColor: 'rgba(9, 125, 242, 0.2)',
-                    borderColor: 'rgba(9, 125, 242, 1)',
-                    borderWidth: 2,
-                  },
-                ],
-              }}
-            />
+          <Container className="bottom-container">
+            <BarItem title={'HTML'} proficiency={90} />
+            <BarItem title={'CSS'} proficiency={90} />
+            <BarItem title={'Javascript'} proficiency={80} />
+            <BarItem title={'React'} proficiency={80} />
+            <BarItem title={'Node.js'} proficiency={75} />
+            <BarItem title={'PHP'} proficiency={70} />
+            <BarItem title={'Photoshop'} proficiency={65} />
+            <BarItem title={'UI Design'} proficiency={60} />
           </Container>
         </ScrollAnimation>
       </section>

@@ -25,7 +25,7 @@
   justify-content: center;
 }
 
-.second-content .MuiContainer-root .MuiCard-root {
+.second-content .MuiContainer-root.top-container .MuiCard-root {
   margin: 0.5em;
   padding: 1.5em 0.5em;
   display: flex;
@@ -34,7 +34,7 @@
   width: 200px;
 }
 
-.second-content .MuiContainer-root .MuiCard-root .MuiPaper-root {
+.second-content .MuiContainer-root.top-container .MuiCard-root .MuiPaper-root {
   background-color: #173a5e;
   border-radius: 40px;
   width: 80px;
@@ -45,21 +45,107 @@
   margin-bottom: 0.5em;
 }
 
-.second-content .MuiContainer-root .MuiCard-root .MuiSvgIcon-root{
+.second-content .MuiContainer-root.top-container .MuiCard-root .MuiSvgIcon-root{
   color: whitesmoke;
   font-size: 50px;
 }
 
-.second-content .chart-container {
-  margin-top: 1em;
-  min-height: 400px;
-  min-width: 400px;
-  max-width: 600px;
+.second-content .MuiContainer-root.bottom-container {
+  margin-top: 3em;
 }
 
-@media screen and (max-width: 610px) {
-  .second-content .chart-container {
+.second-content .MuiContainer-root.bottom-container .MuiPaper-root {
+  display: flex;
+  flex-grow: 1;
+  margin: 0.5em;
+  min-width: 400px;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  flex-grow: 1;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container .MuiBox-root.title-container {
+  background-color: #173a5e;
+  width: 150px;
+  display: flex;
+  z-index: 3;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container .MuiBox-root.title-container .MuiTypography-h5 {
+  color: whitesmoke;
+  margin: auto;
+  text-align: center;
+  padding-left: 20px;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container .MuiBox-root.title-divider {
+  width: 40px;
+  height: 40px;
+  background-color: #173a5e;
+  transform: rotate(45deg);
+  margin-left: -20px;
+  z-index: 2;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container .MuiBox-root.progress-container {
+  display: flex;
+  margin-left: -20px;
+  flex-grow: 1;
+  position: relative;
+}
+
+@keyframes example {
+  0%   {background-image: repeating-linear-gradient(45deg,#0288d1, #0288d1 20px, rgb(96, 156, 215) 20px, rgb(96, 156, 215) 40px);}
+  5%   {background-image: repeating-linear-gradient(45deg,#0288d1 2px, #0288d1 22px, rgb(96, 156, 215) 22px, rgb(96, 156, 215) 42px);}
+  10%   {background-image: repeating-linear-gradient(45deg,#0288d1 4px, #0288d1 24px, rgb(96, 156, 215) 24px, rgb(96, 156, 215) 44px);}
+  15%   {background-image: repeating-linear-gradient(45deg,#0288d1 6px, #0288d1 26px, rgb(96, 156, 215) 26px, rgb(96, 156, 215) 46px);}
+  20%   {background-image: repeating-linear-gradient(45deg,#0288d1 8px, #0288d1 28px, rgb(96, 156, 215) 28px, rgb(96, 156, 215) 48px);}
+  25%   {background-image: repeating-linear-gradient(45deg,#0288d1 10px, #0288d1 30px, rgb(96, 156, 215) 30px, rgb(96, 156, 215) 50px);}
+  35%   {background-image: repeating-linear-gradient(45deg,#0288d1 12px, #0288d1 32px, rgb(96, 156, 215) 32px, rgb(96, 156, 215) 52px);}
+  40%   {background-image: repeating-linear-gradient(45deg,#0288d1 14px, #0288d1 34px, rgb(96, 156, 215) 34px, rgb(96, 156, 215) 54px);}
+  45%   {background-image: repeating-linear-gradient(45deg,#0288d1 16px, #0288d1 36px, rgb(96, 156, 215) 36px, rgb(96, 156, 215) 56px);}
+  50%   {background-image: repeating-linear-gradient(45deg,#0288d1 18px, #0288d1 38px, rgb(96, 156, 215) 38px, rgb(96, 156, 215) 58px);}
+  55%   {background-image: repeating-linear-gradient(45deg,#0288d1 20px, #0288d1 40px, rgb(96, 156, 215) 40px, rgb(96, 156, 215) 60px);}
+  60%   {background-image: repeating-linear-gradient(45deg,#0288d1 22px, #0288d1 42px, rgb(96, 156, 215) 42px, rgb(96, 156, 215) 62px);}
+  65%   {background-image: repeating-linear-gradient(45deg,#0288d1 24px, #0288d1 44px, rgb(96, 156, 215) 44px, rgb(96, 156, 215) 64px);}
+  70%   {background-image: repeating-linear-gradient(45deg,#0288d1 26px, #0288d1 46px, rgb(96, 156, 215) 46px, rgb(96, 156, 215) 66px);}
+  75%   {background-image: repeating-linear-gradient(45deg,#0288d1 28px, #0288d1 48px, rgb(96, 156, 215) 48px, rgb(96, 156, 215) 68px);}
+  80%   {background-image: repeating-linear-gradient(45deg,#0288d1 30px, #0288d1 50px, rgb(96, 156, 215) 50px, rgb(96, 156, 215) 70px);}
+  85%   {background-image: repeating-linear-gradient(45deg,#0288d1 32px, #0288d1 52px, rgb(96, 156, 215) 52px, rgb(96, 156, 215) 72px);}
+  90%   {background-image: repeating-linear-gradient(45deg,#0288d1 34px, #0288d1 54px, rgb(96, 156, 215) 54px, rgb(96, 156, 215) 74px);}
+  95%   {background-image: repeating-linear-gradient(45deg,#0288d1 36px, #0288d1 56px, rgb(96, 156, 215) 56px, rgb(96, 156, 215) 76px);}
+  100%   {background-image: repeating-linear-gradient(45deg,#0288d1 38px, #0288d1 58px, rgb(96, 156, 215) 58px, rgb(96, 156, 215) 78px);}
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container:hover .MuiBox-root.progress {
+  animation: example 0.5s linear infinite;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container .MuiBox-root.progress {
+  display: flex;
+  background-image: repeating-linear-gradient(45deg,#0288d1, #0288d1 20px, rgb(96, 156, 215) 20px, rgb(96, 156, 215) 40px);
+  flex-grow: 1;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container .MuiBox-root.proficiency-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.second-content .MuiContainer-root.bottom-container .MuiBox-root.outer-container .MuiBox-root.proficiency-container .MuiTypography-h5 {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
+  .second-content .MuiContainer-root.bottom-container .MuiPaper-root {
     min-width: 300px;
-    max-width: 400px;
   }
 }
