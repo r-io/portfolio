@@ -44,7 +44,7 @@ export default function FirstContent() {
       </Canvas>
       <HeaderBar />
       <ScrollAnimation className="content-container" animateIn="fadeIn">
-        <img className="image-logo" src="/logo.png" />
+        <img className="image-logo" src="logo.png" />
         <Typography variant="h2">Rio</Typography>
         <TextAnimation />
         <Container maxWidth="sm">

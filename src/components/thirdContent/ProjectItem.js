@@ -59,7 +59,7 @@ function SimpleDialog(props) {
             <img
               className={landscape ? 'landscape-screenshot-image' : 'screenshot-image'}
               key={index}
-              src={'/projects/' + id + '-' + (index + 1) + '.jpg'}
+              src={'projects/' + id + '-' + (index + 1) + '.jpg'}
               alt={title}
               loading="lazy"
             />
@@ -87,7 +87,7 @@ export default function ProjectItem(props) {
       <CardMedia
         component="img"
         height="195"
-        image={'/projects/' + id + '.jpg'}
+        image={'projects/' + id + '.jpg'}
         alt={title}
         onClick={handleClickOpen}
       />

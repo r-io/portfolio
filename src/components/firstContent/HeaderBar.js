@@ -102,7 +102,7 @@ export default function HeaderBar() {
       <AppBar>
         <Toolbar variant="dense">
           <IconButton size="large" onClick={() => handleScroll('top')} color="inherit">
-            <img className="header-logo" src="/logo.png" />
+            <img className="header-logo" src="logo.png" />
           </IconButton>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Button onClick={() => handleScroll('about')} color="inherit">
