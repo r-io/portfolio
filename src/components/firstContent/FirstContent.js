@@ -10,6 +10,7 @@ import HeaderBar from './HeaderBar';
 import Lights from './Lights';
 import Stars from './Stars';
 import TextAnimation from './TextAnimation';
+import Triangles from './Triangles';
 
 function MouseMove() {
   useFrame((e) => {
@@ -34,10 +35,11 @@ export default function FirstContent() {
         dpr={[1, 2]}
         camera={{ fov: 100, position: [0, 0, 30] }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color('#000004'))}
-        onWheel={() => console.log('click')}
+        onWheel={() => null}
       >
         <MouseMove />
-        <Stars count={50} />
+        <Stars count={40} />
+        <Triangles count={30} />
         <Lights />
       </Canvas>
       <HeaderBar />

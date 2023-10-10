@@ -71,7 +71,7 @@ function SimpleDialog(props) {
 }
 
 export default function ProjectItem(props) {
-  const { id, title, complete, description, website, github, shop, apk } = props;
+  const { id, title, description, website, github, shop, apk } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -99,21 +99,6 @@ export default function ProjectItem(props) {
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
-        {complete ? (
-          <Typography
-            className="success-text"
-            color="success"
-            variant="h6"
-            component="p"
-            textAlign="right"
-          >
-            Complete
-          </Typography>
-        ) : (
-          <Typography color="error" variant="h6" component="p" textAlign="right">
-            In Progress
-          </Typography>
-        )}
       </CardContent>
       <CardActions>
         <Tooltip title="View images">

@@ -16,9 +16,12 @@ export default function Lights() {
   useEffect(() => void composer.current.setSize(size.width, size.height), [size]);
   useFrame(() => composer.current.render(), 1);
   return (
-    <effectComposer ref={composer} args={[gl]}>
-      <renderPass attachArray="passes" scene={scene} camera={camera} />
-      <unrealBloomPass attachArray="passes" args={[aspect, 2, 1, 0]} />
-    </effectComposer>
+    <>
+      <ambientLight />
+      <effectComposer ref={composer} args={[gl]}>
+        <renderPass attachArray="passes" scene={scene} camera={camera} />
+        <unrealBloomPass attachArray="passes" args={[aspect, 2, 1, 0]} />
+      </effectComposer>
+    </>
   );
 }
